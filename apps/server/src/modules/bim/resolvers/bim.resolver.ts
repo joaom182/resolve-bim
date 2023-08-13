@@ -9,6 +9,7 @@ import {
 import { Bim } from '../models/bim.model';
 import { BimService } from '../services/bim.service';
 import { EntityResolver } from './entity.resolver';
+import { Entity } from '../models/entity.model';
 
 @Resolver(() => Bim)
 export class BimResolver {
@@ -32,7 +33,7 @@ export class BimResolver {
     return this.entityResolver.entities(bim.id);
   }
 
-  @ResolveField()
+  @ResolveField(() => Entity, { nullable: true })
   async entity(
     @Args('id', { type: () => Int }) id: number,
     @Parent() bim: Bim,

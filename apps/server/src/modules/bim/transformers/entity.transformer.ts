@@ -5,7 +5,9 @@ import { IDBEntity } from '../repositories/entity.repository';
 
 @Injectable()
 export class EntityTransformer {
-  transform(entityId: number, dbEntityProperties: IDBEntity[]): IEntity {
+  transform(entityId: number, dbEntityProperties: IDBEntity[]): IEntity | null {
+    if (!dbEntityProperties.length) return null;
+
     const categories = _.groupBy(dbEntityProperties, 'attributeCategory');
     const publicCategories = Object.keys(categories).filter(
       (c) => !c?.startsWith('__'),

@@ -11,7 +11,7 @@ export class EntityResolver {
     return this.entityService.getAll(bimId);
   }
 
-  @Query(() => Entity)
+  @Query(() => Entity, { nullable: true })
   async entity(
     @Args('id', { type: () => Int }) id: number,
     @Args('bimId', { type: () => Int }) bimId: number,
