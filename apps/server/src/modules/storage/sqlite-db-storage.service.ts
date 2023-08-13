@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { createWriteStream, existsSync } from 'fs';
-import { resolve } from 'path';
+import { join } from 'path';
 import * as request from 'request';
 import generateHashCode from 'src/helpers/hash-code-generator';
 
-export const dbsPath: string = resolve('./src/__temp__');
+export const dbsPath: string = join(__dirname, '..', '..', '__temp__');
 
 @Injectable()
 export class SqliteDbStorageService {

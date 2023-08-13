@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { resolve } from 'path';
+import { join } from 'path';
 import { LocalFileDbService } from 'src/modules/storage/local-file-db.service';
 import { Bim, IBim } from '../models/bim.model';
 
@@ -7,7 +7,7 @@ interface ILocalDB<T> {
   all: () => T[];
 }
 
-const bimsFixtures = resolve('./src/fixtures/bims.json');
+const bimsFixtures = join(__dirname, '..', '..', '..', 'fixtures', 'bims.json');
 
 @Injectable()
 export class BimRepository {
