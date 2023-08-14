@@ -1,33 +1,28 @@
-# Running the app
+## Getting Started
+
+First, run the development server:
 
 ```bash
 yarn dev
 ```
 
-- Web [http://localhost:3000](http://localhost:3000)
-- Server [http://localhost:3001/graphql](http://localhost:3001/graphql)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# Running with Docker
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Create a network, which allows containers to communicate with each other, by using their container name as a hostname
+To create [API routes](https://nextjs.org/docs/app/building-your-application/routing/router-handlers) add an `api/` directory to the `app/` directory with a `route.ts` file. For individual endpoints, create a subfolder in the `api` directory, like `api/hello/route.ts` would map to [http://localhost:3000/api/hello](http://localhost:3000/api/hello).
 
-```bash
-docker network create app_network
-```
+## Learn More
 
-Build prod using new BuildKit engine
+To learn more about Next.js, take a look at the following resources:
 
-```bash
-COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml build
-```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn/foundations/about-nextjs) - an interactive Next.js tutorial.
 
-Start prod in detached mode
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-```bash
-docker-compose -f docker-compose.yml up -d
-```
+## Deploy on Vercel
 
-# Tests
-```
-yarn test
-```
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_source=github.com&utm_medium=referral&utm_campaign=turborepo-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
