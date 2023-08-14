@@ -1,26 +1,14 @@
 "use client";
+import { useEntityDetailsQuery } from "@/generated/graphql";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import { AlertTriangle, Loader } from "react-feather";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "ui/components/accordion";
-import { gql } from "@apollo/client";
-import { useCallback, useEffect, useMemo, useState } from "react";
-import { AlertTriangle, Loader } from "react-feather";
 import SearchBar from "./search-bar";
-import { useEntityDetailsQuery } from "@/generated/graphql";
-
-const query = gql`
-  query EntityDetails($entityId: Int!, $bimId: Int!) {
-    entity(id: $entityId, bimId: $bimId) {
-      entityId
-      name
-      properties
-      __typename
-    }
-  }
-`;
 
 function NotFound() {
   return (
