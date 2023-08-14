@@ -13,7 +13,10 @@ import { StorageModule } from './modules/storage/storage.module';
     GraphQLModule.forRoot<ApolloDriverConfig>({
       path: '/graphql',
       driver: ApolloDriver,
-      autoSchemaFile: true,
+      autoSchemaFile: {
+        path: 'schema.gql',
+      },
+      sortSchema: true,
       playground: false,
       plugins: [ApolloServerPluginLandingPageLocalDefault()],
       resolvers: {

@@ -32,7 +32,7 @@ export class EntityTransformer {
     return {
       entityId,
       name,
-      properties,
+      properties: properties,
     };
   }
 }

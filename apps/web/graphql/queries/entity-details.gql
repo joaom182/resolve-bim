@@ -1,0 +1,8 @@
+query EntityDetails($entityId: Int!, $bimId: Int!) {
+  entity(id: $entityId, bimId: $bimId) {
+    entityId
+    name
+    properties
+    __typename
+  }
+}

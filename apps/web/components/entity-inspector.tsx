@@ -5,10 +5,11 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "ui/components/accordion";
-import { gql, useQuery } from "@apollo/client";
+import { gql } from "@apollo/client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AlertTriangle, Loader } from "react-feather";
 import SearchBar from "./search-bar";
+import { useEntityDetailsQuery } from "@/generated/graphql";
 
 const query = gql`
   query EntityDetails($entityId: Int!, $bimId: Int!) {
@@ -45,7 +46,7 @@ export default function EntityInspector() {
   const [entityId, setEntityId] = useState<number>();
   const [entity, setEntity] = useState<any>();
 
-  const { data, error, loading } = useQuery<any>(query, {
+  const { data, error, loading } = useEntityDetailsQuery({
     skip: !entityId,
     variables: {
       bimId: 1,
