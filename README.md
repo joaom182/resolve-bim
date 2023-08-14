@@ -1,5 +1,11 @@
 # Demo
 https://www.loom.com/share/4cd87cf15f4d4db0ac625e6f850ef5e7
+
+# Install dependencies
+```bash
+yarn
+```
+
 # Running the app
 
 ```bash
