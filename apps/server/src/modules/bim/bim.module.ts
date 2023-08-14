@@ -19,5 +19,14 @@ import { EntityTransformer } from './transformers/entity.transformer';
     BimResolver,
     BimRepository,
   ],
+  exports: [
+    EntityService,
+    EntityTransformer,
+    EntityResolver,
+    EntityRepository,
+    BimService,
+    BimResolver,
+    BimRepository,
+  ],
 })
 export class BimModule {}

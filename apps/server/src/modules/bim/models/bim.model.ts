@@ -20,8 +20,8 @@ export class Bim implements IBim {
   modelDbUrl: string;
 
   @Field(() => [Entity])
-  entities: Entity[];
+  entities?: Entity[];
 
   @Field(() => Entity)
-  entity: Entity;
+  entity?: Entity;
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { Database } from 'sqlite3';
-import { SqliteDbService } from 'src/modules/storage/sqlite-db.service';
+import { SqliteDbService } from '../../../modules/storage/sqlite-db.service';
 
 export interface IDBEntity {
   entityId: number;

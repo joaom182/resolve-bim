@@ -2,13 +2,13 @@ import { Injectable } from '@nestjs/common';
 import { createWriteStream, existsSync } from 'fs';
 import { join } from 'path';
 import * as request from 'request';
-import generateHashCode from 'src/helpers/hash-code-generator';
+import generateHashCode from '../../helpers/hash-code-generator';
 
 export const dbsPath: string = join(__dirname, '..', '..', '__temp__');
 
 @Injectable()
 export class SqliteDbStorageService {
-  dbIsAvailable(dbFileUrl: string) {
+  dbIsAvailable(dbFileUrl: string): boolean {
     const dbHashCode = generateHashCode(dbFileUrl);
     return existsSync(`${dbsPath}/${dbHashCode}.db`);
   }

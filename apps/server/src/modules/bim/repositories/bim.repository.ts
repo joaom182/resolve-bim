@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { join } from 'path';
-import { LocalFileDbService } from 'src/modules/storage/local-file-db.service';
+import { LocalFileDbService } from '../../../modules/storage/local-file-db.service';
 import { Bim, IBim } from '../models/bim.model';
 
 interface ILocalDB<T> {
@@ -26,8 +26,8 @@ export class BimRepository {
     return db.all();
   }
 
-  async getById(id: number): Promise<IBim> {
+  async getById(id: number): Promise<IBim | null> {
     const db = await this.initDb();
-    return db.all().find((b) => b.id === id);
+    return db.all().find((b) => b.id === id) ?? null;
   }
 }

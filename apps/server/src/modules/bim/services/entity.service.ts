@@ -25,6 +25,7 @@ export class EntityService {
 
   async getById(id: number, bimId: number): Promise<IEntity> {
     const bim = await this.bimRepository.getById(bimId);
+    if (!bim) return null;
     const entityProperties = await this.entityRepository.getById(
       id,
       bim.modelDbUrl,

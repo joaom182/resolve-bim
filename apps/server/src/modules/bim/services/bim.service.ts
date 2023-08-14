@@ -12,7 +12,7 @@ export class BimService {
     return this.bimRepository.getAll();
   }
 
-  async getById(id: number): Promise<IBim> {
-    return this.bimRepository.getById(id);
+  async getById(id: number): Promise<IBim | null> {
+    return this.bimRepository.getById(id) ?? null;
   }
 }
