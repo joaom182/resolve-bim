@@ -1,5 +1,5 @@
 schema:
-  - ../server/schema.gql
+  - ../../packages/shared/schema.gql
 documents: graphql/**/*.gql
 generates:
   generated/graphql.ts:

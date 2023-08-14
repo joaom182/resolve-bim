@@ -14,7 +14,7 @@ import { StorageModule } from './modules/storage/storage.module';
       path: '/graphql',
       driver: ApolloDriver,
       autoSchemaFile: {
-        path: 'schema.gql',
+        path: '../../packages/shared/schema.gql',
       },
       sortSchema: true,
       playground: false,
