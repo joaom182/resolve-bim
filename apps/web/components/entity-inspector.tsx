@@ -4,7 +4,7 @@ import {
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
+} from "ui/components/accordion";
 import { gql, useQuery } from "@apollo/client";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { AlertTriangle, Loader } from "react-feather";
@@ -91,7 +91,6 @@ export default function EntityInspector() {
       </div>
       <div className="relative bg-slate-3">
         {!!entityId && loading && <Loading />}
-        {!!entityId && !loading && !entity && <NotFound />}
         {!loading && !error && !!entity && (
           <>
             <div className="sticky top-0 bg-slate-3 px-6 py-4">
@@ -119,6 +118,7 @@ export default function EntityInspector() {
             </div>
           </>
         )}
+        {!!entityId && !loading && !error && !entity && <NotFound />}
       </div>
     </div>
   );
