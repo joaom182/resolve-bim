@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "concurrently \"next dev\" \"yarn codegen --watch \"./apps/web/graphql/**/*.gql\"\"",
     "debug": "next dev",
-    "build": "yarn codegen && next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "codegen": "graphql-codegen"
@@ -18,7 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-feather": "^2.0.10",
-    "ui": "*"
+    "ui": "*",
+    "shared": "*"
   },
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.0",

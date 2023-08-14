@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "start": "turbo run start",
+    "test": "turbo run test",
     "build": "turbo run build",
     "dev": "turbo run dev",
     "debug": "turbo run debug",
